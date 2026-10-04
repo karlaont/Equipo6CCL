@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Favoritos - Maro's Boutique</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+
+<body>
+
+    <header class="header">
+
+        <div class="header-top">
+            <img src="img/maros boutique.jpg" class="logo">
+
+            <h1>Maro's Boutique</h1>
+        </div>
+
+        <p class="slogan">Estamos para servirte</p>
+
+    </header>
+
+    <nav>
+        <a href="index.html">Inicio</a>
+        <a href="blusas.html">Blusas</a>
+
+        <div class="dropdown">
+            <a href="vestidos.html">Vestidos</a>
+            <div class="dropdown-menu">
+                <a href="vestidos-casuales.html">Vestidos casuales</a>
+                <a href="vestidos-fiesta.html">Vestidos de fiesta</a>
+            </div>
+        </div>
+
+        <a href="pantalones.html">Pantalones</a>
+        <a href="contacto.html">Contacto</a>
+        <a href="https://maps.app.goo.gl/ik1EDSavTcevPHPT6" target="_blank" class="link-mapa"
+            id="linkMapa">Dirección</a>
+        <a href="carrito.html">Favoritos</a>
+    </nav>
+
+    <section class="catalogo">
+
+        <div class="bienvenida">
+            <h2>Favoritos</h2>
+        </div>
+
+        <div id="carritoContainer" class="grid"></div>
+
+        <div class="total-carrito">
+            <h3 id="total"></h3>
+        </div>
+
+        <div class="acciones-carrito">
+            <button id="vaciarCarrito">
+                Vaciar Favoritos
+            </button>
+        </div>
+
+    </section>
+
+    <footer>
+        <p>© 2026 Maro's Boutique</p>
+    </footer>
+
+    <script>
+
+        const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+
+        const contenedor = document.getElementById("carritoContainer");
+
+        const totalEl = document.getElementById("total");
+
+        let total = 0;
+
+        if (carrito.length === 0) {
+
+            contenedor.innerHTML = `
+                <p style="text-align:center;">
+                    No haz agregado nada a favoritos 
+                </p>
+            `;
+
+        } else {
+
+            carrito.forEach((producto, index) => {
+
+                total += parseInt(producto.precio);
+
+                contenedor.innerHTML += 
+
+                    <div class="card">
+
+                        <img src="${producto.img}" class="img-producto">
+
+                        <h3>${producto.nombre}</h3>
+
+                        <p>$${producto.precio} MXN</p>
+
+                        <a href="producto.html?nombre=${producto.nombre}&precio=${producto.precio}&img=${producto.img}"class="btn-ver-producto">
+Ver producto
+</a>
+
+<button onclick="eliminarProducto(${index})">
+    Eliminar
+</button>
+
+                    </div>
+
+                ;
+
+            });
+
+        }
+
+        totalEl.textContent = "Total: $" + total + " MXN";
+
+        function eliminarProducto(index) {
+
+            carrito.splice(index, 1);
+
+            localStorage.setItem("carrito", JSON.stringify(carrito));
+
+            location.reload();
+
+        }
+
+        document.getElementById("vaciarCarrito")
+            .addEventListener("click", function () {
+
+                localStorage.removeItem("carrito");
+
+                location.reload();
+
+            });
+
+    </script>
+
+</body>
+
+</html>
