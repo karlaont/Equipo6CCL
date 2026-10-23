@@ -1,0 +1,382 @@
+body {
+    margin: 0;
+    font-family: Arial;
+    background-color: #c3f9ff; 
+}
+
+.header {
+    text-align: center;
+    padding: 30px 20px;
+}
+
+.header-top {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.header h1 {
+    margin: 0;
+    color: #ff8dd9;
+    font-size: 28px;
+}
+
+.slogan {
+    margin-top: 8px;
+    color: #616161;
+}
+
+nav {
+    text-align: center;
+    padding: 15px;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+}
+
+nav a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: #444;
+}
+
+nav a:hover {
+    color: #c3f9ff;
+}
+
+.bienvenida {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.bienvenida h2 {
+    margin-bottom: 10px;
+    color: #fa73ef;
+}
+
+.bienvenida p {
+    color: #666;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.5;
+}
+
+.catalogo {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.catalogo h2 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+}
+
+.card {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card {
+    width: 100%;
+}
+
+.card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 10px;
+    display: block;
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 15px;
+    background: #8df4ff;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+}
+
+.btn:hover {
+    background: #b0256c;
+}
+
+.contacto-page {
+    max-width: 700px;
+    margin: 10px auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.texto-contacto {
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.info-contacto {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.facebook a {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    color: #1877F2;
+}
+
+.icono {
+    width: 20px;
+}
+
+.formulario {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.formulario input,
+.formulario textarea {
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+}
+
+.formulario button {
+    background: #d63384;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.formulario button:hover {
+    background: #b0256c;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    color: #777;
+}
+
+.producto-detalle {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 20px;
+}
+
+.info {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.img-producto {
+    width: 250px;
+    margin: 20px auto;
+    display: block;
+    border-radius: 10px;
+}
+
+.descripcion {
+    color: #555;
+}
+
+.precio {
+    font-weight: bold;
+    color: #d63384;
+    margin-top: 10px;
+}
+
+#agregarCarrito{
+    background-color: #d63384;
+    color: white;
+    border: none;
+    padding: 14px 25px;
+    border-radius: 12px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 20px;
+}
+
+#agregarCarrito:hover{
+    background-color: #b0256d;
+    transform: scale(1.03);
+}
+
+.boton-carrito{
+    text-align: center;
+}
+
+
+.card img {
+    width: 100%;
+    height: 400px;        
+    object-fit: cover;    
+    border-radius: 10px;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;            /* pegado al botón */
+    left: 0;
+    background-color: white;
+    min-width: 160px;
+    border-radius: 8px;
+    box-shadow: 0px 5px 15px rgba(0,0,0,0.1);
+    padding: 5px 0;
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: #444;
+}
+
+.dropdown-menu a:hover {
+    background-color: #fff0f5;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+
+#carritoContainer{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+#carritoContainer .card{
+    background: white;
+    border-radius: 20px;
+    padding: 25px;
+    text-align: center;
+    box-shadow: 0px 4px 15px rgba(0,0,0,0.08);
+    max-width: 350px;
+    margin: auto;
+}
+
+#carritoContainer .card img{
+    width: 250px;
+    height: 320px;
+    object-fit: cover;
+    border-radius: 15px;
+    display: block;
+    margin: 0 auto;
+}
+
+#carritoContainer h3{
+    margin-top: 20px;
+    color: #d63384;
+    font-size: 24px;
+}
+
+#carritoContainer p{
+    font-size: 15px;
+    margin: 15px 0;
+}
+
+#carritoContainer button{
+    background-color: #d63384;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+#carritoContainer button:hover{
+    background-color: #b0256d;
+}
+
+.total-carrito{
+    text-align: center;
+    margin-top: 40px;
+    font-size: 20px;
+    color: #d63384;
+}
+
+.acciones-carrito{
+    text-align: center;
+    margin-top: 20px;
+}
+
+#vaciarCarrito{
+    background-color: #ff69b4;
+    color: white;
+    border: none;
+    padding: 15px 25px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+#vaciarCarrito:hover{
+    background-color: #e0559d;
+}
+
+.btn-ver-producto{
+    display: inline-block;
+    margin-bottom: 15px;
+    background-color: #ffb6d9;
+    color: white;
+    padding: 12px 18px;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.btn-ver-producto:hover{
+    background-color: #ff8fc1;
+}
+
+video {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
